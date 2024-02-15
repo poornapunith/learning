@@ -11,9 +11,20 @@ class LinkedList :
         self.tail=None
         self.length=0
 
+    def __str__(self) :
+        temp=self.head
+        out=""
+        while (temp != None):
+            out+= str(temp.value)
+            if (temp.next != None):
+                out+=" -> "
+            temp=temp.next
+        return out
+
+
     def InsertAtEnd(self,value):
         new_node=Node(value)
-        if(self.head==None):
+        if(self.head == None):
             self.head=new_node
             self.tail=new_node
         else:
@@ -25,5 +36,4 @@ class LinkedList :
 new_Linked_List = LinkedList()
 new_Linked_List.InsertAtEnd(10)
 new_Linked_List.InsertAtEnd(20)
-print(new_Linked_List.length)
-print(new_Linked_List.head.value)
+print(new_Linked_List)
