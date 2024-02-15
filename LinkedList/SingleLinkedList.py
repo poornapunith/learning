@@ -31,7 +31,6 @@ class LinkedList :
             self.head=new_node
         self.length+=1
 
-
     def InsertAtEnd(self,value):
         new_node=Node(value)
         if(self.head == None):
@@ -41,10 +40,30 @@ class LinkedList :
             self.tail.next=new_node
             self.tail=new_node
         self.length+=1
+    
+    def InsertAtIndex (self,index, value):
+        new_node=Node(value)
+        if (self.head==None):
+            self.head=new_node
+            self.tail=new_node
+        elif (index<0 or index>self.length):
+            return False
+        elif (index==0):
+            new_node.next=self.head
+            self.head=new_node
+        else:
+            temp=self.head
+            for i in range(index-1):
+                temp=temp.next
+            new_node.next=temp.next
+            temp.next=new_node
+        self.length+=1
 
 
 new_Linked_List = LinkedList()
 new_Linked_List.InsertAtEnd(10)
 new_Linked_List.InsertAtEnd(20)
 new_Linked_List.InsertAtBeginning(30)
+new_Linked_List.InsertAtIndex(0,50)
+new_Linked_List.InsertAtIndex(20,150)
 print(new_Linked_List)
