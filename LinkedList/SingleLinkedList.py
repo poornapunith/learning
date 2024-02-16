@@ -76,6 +76,16 @@ class LinkedList :
             temp.next=new_node
         self.length+=1
 
+    def pop_first(self):
+        first_node=self.head
+        if (self.length==1):
+            self.head=None
+            self.tail=None
+        else:
+            self.head=self.head.next
+            first_node.next=None
+            return first_node
+
 
 new_Linked_List = LinkedList()
 new_Linked_List.InsertAtEnd(10)
@@ -83,5 +93,6 @@ new_Linked_List.InsertAtEnd(20)
 new_Linked_List.InsertAtBeginning(30)
 new_Linked_List.InsertAtIndex(0,50)
 new_Linked_List.InsertAtIndex(20,150)
-print(new_Linked_List.search(50))
+print(new_Linked_List)
+print(new_Linked_List.pop_first().value)
 print(new_Linked_List)
