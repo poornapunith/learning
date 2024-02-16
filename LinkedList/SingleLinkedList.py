@@ -121,7 +121,11 @@ class LinkedList :
         target_node.next=None
         self.length-=1
         return target_node
-
+    
+    def delete_all(self):
+        self.head=None
+        self.tail=None
+        self.length=0
 
 
 new_Linked_List = LinkedList()
@@ -131,5 +135,5 @@ new_Linked_List.InsertAtBeginning(30)
 new_Linked_List.InsertAtIndex(0,50)
 new_Linked_List.InsertAtIndex(20,150)
 print(new_Linked_List)
-new_Linked_List.pop_any(3)
+new_Linked_List.delete_all()
 print(new_Linked_List)
