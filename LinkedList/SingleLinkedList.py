@@ -77,6 +77,8 @@ class LinkedList :
         self.length+=1
 
     def pop_first(self):
+        if(self.length==0):
+            return None
         first_node=self.head
         if (self.length==1):
             self.head=None
