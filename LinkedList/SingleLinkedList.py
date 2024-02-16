@@ -21,6 +21,12 @@ class LinkedList :
             temp=temp.next
         return out
     
+    def traverse(self):
+        temp=self.head
+        while(temp!=None):
+            print(temp.value)
+            temp=temp.next
+    
     def InsertAtBeginning (self,value):
         new_node=Node(value)
         if(self.head==None):
@@ -66,4 +72,5 @@ new_Linked_List.InsertAtEnd(20)
 new_Linked_List.InsertAtBeginning(30)
 new_Linked_List.InsertAtIndex(0,50)
 new_Linked_List.InsertAtIndex(20,150)
+LinkedList.traverse(new_Linked_List)
 print(new_Linked_List)
