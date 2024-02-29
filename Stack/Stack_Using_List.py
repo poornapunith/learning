@@ -29,12 +29,18 @@ class Stack:
             return "Stack is Empty"
         else:
             return self.list[len(self.list)-1]
+        
+    def delete(self):
+        self.list=[]
+        
 
 customStack=Stack()
 customStack.push(10)
 customStack.push(20)
 customStack.push(30)
 
-print(customStack.peek())
+print(customStack)
+customStack.delete()
+print(customStack.isEmpty())
 
     
